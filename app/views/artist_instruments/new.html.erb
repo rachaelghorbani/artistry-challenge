@@ -1,0 +1,16 @@
+<%= form_for @artist_instrument do |f| %>
+    <% if @artist_instrument.errors.any? %>
+        <% @artist_instrument.errors.full_messages.each do |msg| %>
+            <%= msg %>
+        <% end%>
+    <% end%>
+
+<p>
+<%= f.collection_select :artist_id, Artist.all, :id, :name %>
+</p>
+<p>
+<%= f.collection_select :instrument_id, Instrument.all, :id, :name %>
+</p>
+
+<%= f.submit %>
+<% end%>

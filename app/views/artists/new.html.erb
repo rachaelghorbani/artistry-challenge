@@ -1,0 +1,24 @@
+<h1>Create New Artist:</h1>
+<%= form_for @artist do |f| %>
+    <% if @artist.errors.any? %>
+        <% @artist.errors.full_messages.each do |msg| %>
+            <%= msg %>
+        <% end%>
+    <% end %>
+<p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+</p>
+
+<p>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+</p>
+
+<p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+</p>
+    <%= f.submit %>
+
+<% end %>

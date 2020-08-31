@@ -1,0 +1,10 @@
+<h1><%= @artist.name.pluralize %> Homepage:</h1>
+<p>Name: <%= @artist.name %> | Age: <%= @artist.age %> | Title: <%= @artist.title %></p>
+<p>Instruments Played:</p>
+<ul>
+    <% @artist.instruments.each do |instrument| %>
+        <li><%= instrument.name %></li>
+    <% end%>
+</ul>
+
+<%= button_to 'Add Instrument', new_artist_instrument_path, method: 'get'%>
